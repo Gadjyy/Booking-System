@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css"> <!-- Include your CSS file here -->
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        min-height: 100vh;
+    }
+
+    .register-container {
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        text-align: center;
+        margin: 0 auto; /* Center horizontally */
+    }
+
+    .register-container h2 {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .form-group {
+        text-align: left;
+        margin: 20px 0;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    button.primary-btn {
+        background-color: #7fc142;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .login-link {
+        margin-top: 20px;
+    }
+
+    .login-link a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+
+    .role-group {
+        text-align: left;
+        margin: 20px 0;
+    }
+
+    .role-group label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .role-select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+</style>
+
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form id="register-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name "password" required>
+            </div>
+            <div class="role-group">
+                <label for="role">Role:</label>
+                <select id="role" name="role" class="role-select">
+                    <option value="customer">Customer</option>
+                    <option value="owner">Owner</option>
+                </select>
+            </div>
+            <button type="submit" class="primary-btn">Register</button>
+        </form>
+    </div>
+
+    <script>
+        const registerForm = document.getElementById('register-form');
+
+        registerForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const selectedRole = document.getElementById('role').value;
+
+            // You can add registration logic here, including storing the role in your database.
+            // Replace this part with your registration process.
+
+            alert(`Registration successful as a ${selectedRole}. You can now login.`);
+        });
+    </script>
+</body>
+</html>

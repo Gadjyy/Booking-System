@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        min-height: 100vh;
+    }
+
+    .login-container {
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        text-align: center;
+        margin: 0 auto; /* Center horizontally */
+    }
+
+    .login-container h2 {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .form-group {
+        text-align: left;
+        margin: 20px 0;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .role-label {
+        font-weight: bold;
+        display: block;
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .primary-btn {
+        background-color: #7fc142;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .signup-link {
+        margin-top: 20px;
+    }
+
+    .signup-link a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+
+</style>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label class="role-label" for="role">Login As:</label>
+                <select name="role" id="role" required>
+                    <option value="customer">Customer</option>
+                    <option value="owner">Owner</option>
+                </select>
+            </div>
+            <button type="submit" class="primary-btn">Login</button>
+        </form>
+        <div class="signup-link">
+            Don't have an account yet? <a href="registration.html">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+
+            // Perform authentication here based on the selected role.
+            if (role === 'customer') {
+                // Customer authentication logic
+            } else if (role === 'owner') {
+                // Owner authentication logic
+            }
+
+            // Replace this conditional statement with your authentication logic.
+            if (username === 'your_username' && password === 'your_password') {
+                // Redirect to your main page based on the selected role (adjust the URLs accordingly).
+                if (role === 'customer') {
+                    window.location.href = 'customer_home.html';
+                } else if (role === 'owner') {
+                    window.location.href = 'owner_home.html';
+                }
+            } else {
+                alert('Login failed. Please check your credentials.');
+            }
+        });
+    </script>
+</body>
+</html>
