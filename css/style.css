@@ -102,6 +102,11 @@ header .navlinks span {
   display: none;
 }
 
+.logo img {
+  max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+  height: auto; /* Maintain the image's aspect ratio */
+}
+
 @media only screen and (max-width:768px) {
   header ul {
     position: absolute;
